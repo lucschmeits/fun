@@ -14,6 +14,7 @@ namespace fun12.Class
         private string _hoofdProductNaam;
         private string _hoofdProductOmschrijving;
         private string _hoofdProductNr;
+        private string _catNr;
 
         public string hoofdProductNaam
         {
@@ -33,6 +34,12 @@ namespace fun12.Class
             set { this._hoofdProductNr = value; }
         }
 
+        public string catNr
+        {
+            get { return this._catNr; }
+            set { this._catNr = value; }
+        }
+
         public void save()
         {
 
@@ -42,7 +49,7 @@ namespace fun12.Class
             {
                 con = new MySqlConnection(str);
                 con.Open(); //open the connection
-                String cmdText = "INSERT INTO `hoofdproducten` (`productid`, `hoofdnaam`, `hoofdomschrijving`, `catNummer`, `hoofdProductNr`) VALUES ('', '" + _hoofdProductNaam + "', '" + _hoofdProductOmschrijving + "', '', '" + _hoofdProductNr + "');";
+                String cmdText = "INSERT INTO `hoofdproducten` (`productid`, `hoofdnaam`, `hoofdomschrijving`, `catNummer`, `hoofdProductNr`) VALUES ('', '" + _hoofdProductNaam + "', '" + _hoofdProductOmschrijving + "', '" + _catNr + "', '" + _hoofdProductNr + "');";
                 MySqlCommand cmd = new MySqlCommand(cmdText, con);
                 cmd.Prepare();
                 cmd.ExecuteNonQuery();

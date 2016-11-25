@@ -1,4 +1,5 @@
-﻿using fun12.Schermen;
+﻿using fun12.Class;
+using fun12.Schermen;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +28,33 @@ namespace fun12
         {
             addsubproduct sub = new addsubproduct();
             sub.Show();
+        }
+
+        private bool check()
+        {
+            if (String.IsNullOrEmpty(textBox1.Text) || String.IsNullOrEmpty(richTextBox1.Text) || String.IsNullOrEmpty(textBox2.Text))
+            {
+                MessageBox.Show("Alle velden moeten worden ingevuld.");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private void btnToevoegen_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(listBox1.SelectedItem.ToString()); 
+        /*    addhoofdproduct addhoofd = new addhoofdproduct();
+            addhoofd.hoofdProductNaam = textBox1.Text;
+            addhoofd.hoofdProductOmschrijving = richTextBox1.Text;
+            addhoofd.hoofdProductNr = textBox2.Text;
+            if (check())
+            {
+                addhoofd.save();
+            } */
+
         }
     }
 }
