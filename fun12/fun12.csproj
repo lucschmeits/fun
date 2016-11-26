@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\addhoofdproduct.cs" />
+    <Compile Include="Class\addsubproducten.cs" />
     <Compile Include="Schermen\addproduct.cs">
       <SubType>Form</SubType>
     </Compile>

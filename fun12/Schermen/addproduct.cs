@@ -43,17 +43,27 @@ namespace fun12
             }
         }
 
+        private void cleartext()
+        {
+            textBox1.Text = "";
+            richTextBox1.Text = "";
+            textBox2.Text = "";
+        }
+
         private void btnToevoegen_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(listBox1.SelectedItem.ToString()); 
-        /*    addhoofdproduct addhoofd = new addhoofdproduct();
+                   
+            addhoofdproduct addhoofd = new addhoofdproduct();
+
+            addhoofd.getCatNr(listBox1.SelectedItem.ToString());            
             addhoofd.hoofdProductNaam = textBox1.Text;
             addhoofd.hoofdProductOmschrijving = richTextBox1.Text;
             addhoofd.hoofdProductNr = textBox2.Text;
             if (check())
             {
                 addhoofd.save();
-            } */
+                cleartext();
+            } 
 
         }
     }

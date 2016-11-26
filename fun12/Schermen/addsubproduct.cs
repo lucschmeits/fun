@@ -15,6 +15,7 @@ namespace fun12.Schermen
         public addsubproduct()
         {
             InitializeComponent();
+
         }
     }
 }
