@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace fun12
@@ -16,7 +9,7 @@ namespace fun12
         {
             InitializeComponent();
         }
-        
+
         private void checkInput()
         {
             if (String.IsNullOrEmpty(textBox1.Text) || String.IsNullOrEmpty(textBox2.Text) || String.IsNullOrEmpty(textBox3.Text) || String.IsNullOrEmpty(textBox4.Text))
@@ -24,6 +17,7 @@ namespace fun12
                 MessageBox.Show("Alle velden moeten worden ingevuld.");
             }
         }
+
         private bool checkPassword()
         {
             string password = textBox2.Text;
@@ -32,11 +26,13 @@ namespace fun12
             {
                 MessageBox.Show("Wachtwoorden komen niet overeen.");
                 return false;
-            }else
+            }
+            else
             {
                 return true;
             }
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             user newUser = new user();
@@ -52,11 +48,8 @@ namespace fun12
                     newUser.save();
                     MessageBox.Show("U bent geregristreerd. U kunt vanaf nu inloggen.");
                     this.Close();
-
                 }
-               
             }
-            
         }
     }
 }

@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
-using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace fun12.Class
 {
-  public static  class hoofdproducten
+    public static class hoofdproducten
     {
         public static DataTable getHoofdproducten(string catNummer)
         {
-            
             string con = new db().connstring;
-            String cmdText = "SELECT * FROM `hoofdproducten` WHERE `catNummer` = '"+ catNummer +"'";
+            String cmdText = "SELECT * FROM `hoofdproducten` WHERE `catNummer` = '" + catNummer + "'";
             DataTable hoofdProducten = new DataTable();
             try
             {
@@ -29,7 +24,6 @@ namespace fun12.Class
 
                 //catListbox.Items.Add(reader.GetString(2));
                 //MessageBox.Show(reader.GetString(1));
-
             }
             catch (MySqlException err)
             {
@@ -37,8 +31,8 @@ namespace fun12.Class
             }
 
             return hoofdProducten;
-        
-    }
+        }
+
         public static DataTable getHoofdProductNr(string hoofdNaam)
         {
             string con = new db().connstring;
@@ -52,13 +46,10 @@ namespace fun12.Class
                 MySqlDataReader reader = cmd.ExecuteReader();
                 tabel.Load(reader);
                 reader.Close();
-
             }
             catch (MySqlException err)
             {
-
                 MessageBox.Show("Error: " + err.ToString());
-                
             }
 
             return tabel;

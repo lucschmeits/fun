@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Windows.Forms;
-using System.Drawing;
 
 namespace fun12
 {
-    class Users
+    internal class Users
     {
-        loginscherm login = new loginscherm();
-        homescreen home = new homescreen();
-        
-        string con = new db().connstring;
+        private loginscherm login = new loginscherm();
+        private homescreen home = new homescreen();
+
+        private string con = new db().connstring;
 
         private string _gebruikersNaam;
         private string _wachtWoord;
@@ -30,12 +25,12 @@ namespace fun12
             get { return this._wachtWoord; }
             set { this._wachtWoord = value; }
         }
-       
+
         public bool check()
         {
             String str = this.con;
             MySqlConnection con = null;
-            
+
             MySqlDataReader reader = null;
             try
             {
@@ -44,44 +39,36 @@ namespace fun12
                 String cmdText = "SELECT * FROM `login` WHERE gebruikersnaam = '" + _gebruikersNaam + "'";
                 MySqlCommand cmd = new MySqlCommand(cmdText, con);
                 reader = cmd.ExecuteReader();
-              
-               if (reader.Read())
+
+                if (reader.Read())
                 {
                     string username = reader.GetString(1);
                     string password = reader.GetString(2);
-                   
+
                     if (username == _gebruikersNaam && password == _wachtWoord)
                     {
                         MessageBox.Show("Gebruikersnaam en wachtwoord is juist.");
-                        
+
                         return true;
-                        
-                    }else
+                    }
+                    else
                     {
                         MessageBox.Show("Gebruikersnaam of wachtwoord is onjuist.");
                         return false;
                     }
-                    
-                   
-                }else
+                }
+                else
                 {
                     MessageBox.Show("Gebruiker niet gevonden.");
-                    
+
                     return false;
                 }
-               
             }
             catch (MySqlException err)
             {
-                
                 MessageBox.Show("Error: " + err.ToString());
                 return false;
             }
-        
-         
         }
-
-       
     }
 }
-

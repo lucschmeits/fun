@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
-using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace fun12.Class
 {
-    class subproducten
+    internal class subproducten
     {
         public static DataTable getSubproducten(string hoofdNaam)
         {
-
             string con = new db().connstring;
             String cmdText = "SELECT * FROM `subproducten` WHERE `hoofdProductNr` = '" + hoofdNaam + "'";
             DataTable subProducten = new DataTable();
@@ -32,7 +27,6 @@ namespace fun12.Class
             }
 
             return subProducten;
-
         }
     }
 }

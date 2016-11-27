@@ -1,28 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using fun12.Class;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using fun12.Class;
 
 namespace fun12
 {
     public partial class homescreen : Form
     {
         public homescreen()
-        {  
+        {
             InitializeComponent();
             DataTable tb = categorie.getCategory();
             for (int i = 0; i < tb.Rows.Count; i++)
             {
                 catListbox.Items.Add(tb.Rows[i][1]);
             }
-
         }
+
         private void vulCategory()
         {
             catListbox.Items.Clear();
@@ -34,6 +28,7 @@ namespace fun12
                 catListbox.Items.Add(tb.Rows[i][1]);
             }
         }
+
         private void catListbox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (catListbox.SelectedIndex != -1)
@@ -48,7 +43,6 @@ namespace fun12
                     dt = hoofdproducten.getHoofdproducten(catNummer);
                     if (dt.Rows.Count > 0)
                     {
-                        
                         for (int i = 0; i < dt.Rows.Count; i++)
                         {
                             hoofdListbox.Items.Add(dt.Rows[i][1].ToString());
@@ -60,7 +54,6 @@ namespace fun12
 
         private void subListbox_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
         }
 
         private void hoofdListbox_SelectedIndexChanged(object sender, EventArgs e)
@@ -76,10 +69,9 @@ namespace fun12
                     hoofdPr = subproducten.getSubproducten(hoofdNaam);
                     if (hoofdPr.Rows.Count > 0)
                     {
-
                         for (int i = 0; i < hoofdPr.Rows.Count; i++)
                         {
-                            subListbox.Items.Add(hoofdPr.Rows[i][1].ToString() +" " + hoofdPr.Rows[i][2].ToString());
+                            subListbox.Items.Add(hoofdPr.Rows[i][1].ToString() + " " + hoofdPr.Rows[i][2].ToString());
                         }
                     }
                 }

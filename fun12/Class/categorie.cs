@@ -1,16 +1,11 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data;
+using System.Windows.Forms;
 
 namespace fun12
 {
-    
-   public static class categorie
+    public static class categorie
     {
         public static DataTable getCategory()
         {
@@ -33,10 +28,11 @@ namespace fun12
 
             return tabel;
         }
+
         public static DataTable getCatnummer(string catNaam)
         {
             string con = new db().connstring;
-            String cmdText = "SELECT `catNummer` FROM `categorie` WHERE `catNaam` = '"+ catNaam +"'";
+            String cmdText = "SELECT `catNummer` FROM `categorie` WHERE `catNaam` = '" + catNaam + "'";
             DataTable tabel = new DataTable();
             try
             {
@@ -54,7 +50,5 @@ namespace fun12
 
             return tabel;
         }
-            }
-        }
-    
-
+    }
+}

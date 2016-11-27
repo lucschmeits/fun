@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
 using System.Windows.Forms;
 
 namespace fun12.Class
 {
-     class addhoofdproduct
+    internal class addhoofdproduct
     {
-        string con = new db().connstring;
+        private string con = new db().connstring;
 
         private string _hoofdProductNaam;
         private string _hoofdProductOmschrijving;
@@ -49,7 +45,6 @@ namespace fun12.Class
             set { this._catNaam = value; }
         }
 
-
         public void getCatNr(string catNaam)
         {
             string con = new db().connstring;
@@ -63,22 +58,17 @@ namespace fun12.Class
                 MySqlDataReader reader = cmd.ExecuteReader();
 
                 categorieNr.Load(reader);
-
-
             }
             catch (MySqlException err)
             {
                 MessageBox.Show("Error: " + err.ToString());
             }
 
-
             _catNr = categorieNr.Rows[0][0].ToString();
         }
 
-
         public void save()
         {
-
             String str = this.con;
             MySqlConnection con = null;
             try
@@ -89,7 +79,6 @@ namespace fun12.Class
                 MySqlCommand cmd = new MySqlCommand(cmdText, con);
                 cmd.Prepare();
                 cmd.ExecuteNonQuery();
-
             }
             catch (MySqlException err)
             {

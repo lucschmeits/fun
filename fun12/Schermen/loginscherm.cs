@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
-
 
 namespace fun12
 {
@@ -18,26 +9,24 @@ namespace fun12
         {
             InitializeComponent();
             this.Cursor = Cursors.Default;
-            
-        }
-        
-        homescreen home = new homescreen();
-
-       /* public void setPictureColor()
-        {
-            Color kleur = Color.Green;
-            pictureBox6.BackColor = kleur;
-
         }
 
-        public PictureBox picturbox6()
-        {
-            return pictureBox6;
-        }
-        */
+        private homescreen home = new homescreen();
+
+        /* public void setPictureColor()
+         {
+             Color kleur = Color.Green;
+             pictureBox6.BackColor = kleur;
+         }
+
+         public PictureBox picturbox6()
+         {
+             return pictureBox6;
+         }
+         */
+
         private void checkVeld()
         {
-           
             if (String.IsNullOrEmpty(textBox1.Text))
             {
                 //pictureBox6.BackColor = Color.DarkRed;
@@ -46,7 +35,7 @@ namespace fun12
             else
             {
                 ErrGebruikersnaam.Text = "";
-               // pictureBox6.BackColor = Color.Green;
+                // pictureBox6.BackColor = Color.Green;
             }
             if (String.IsNullOrEmpty(textBox2.Text))
             {
@@ -60,7 +49,6 @@ namespace fun12
             }
         }
 
-       
         public PictureBox MyPictureBox
         {
             get
@@ -68,11 +56,12 @@ namespace fun12
                 return pictureBox6;
             }
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             //check user
             Users checkUsers = new Users();
-           
+
             checkUsers.gebruikersnaam = textBox1.Text;
             checkUsers.wachtwoord = textBox2.Text;
 
@@ -83,18 +72,14 @@ namespace fun12
             {
                 home.Show();
                 this.Hide();
-
-            }else
-            {
-
             }
-            
-
+            else
+            {
+            }
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
-
         }
 
         private void button2_Click(object sender, EventArgs e)

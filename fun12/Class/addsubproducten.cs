@@ -1,17 +1,13 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace fun12.Class
 {
-    class addsubproducten
+    internal class addsubproducten
     {
-        string con = new db().connstring;
+        private string con = new db().connstring;
 
         private string _subnaam;
         private string _subomschrijving;
@@ -42,7 +38,6 @@ namespace fun12.Class
             set { this._hoofdNaam = value; }
         }
 
-
         public void getHoofdNr(string hoofdNaam)
         {
             String cmdText = "SELECT `hoofdProductNr` FROM `hoofdproducten` WHERE `hoofdnaam` = '" + hoofdNaam + "'";
@@ -55,14 +50,11 @@ namespace fun12.Class
                 MySqlDataReader reader = cmd.ExecuteReader();
 
                 dt.Load(reader);
-
-
             }
             catch (MySqlException err)
             {
                 MessageBox.Show("Error: " + err.ToString());
             }
-
 
             _hoofdProductNr = dt.Rows[0][0].ToString();
         }
@@ -79,7 +71,6 @@ namespace fun12.Class
                 MySqlCommand cmd = new MySqlCommand(cmdText, con);
                 cmd.Prepare();
                 cmd.ExecuteNonQuery();
-
             }
             catch (MySqlException err)
             {

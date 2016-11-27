@@ -1,13 +1,7 @@
 ﻿using fun12.Class;
 using fun12.Schermen;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace fun12
@@ -52,10 +46,9 @@ namespace fun12
 
         private void btnToevoegen_Click(object sender, EventArgs e)
         {
-                   
             addhoofdproduct addhoofd = new addhoofdproduct();
 
-            addhoofd.getCatNr(listBox1.SelectedItem.ToString());            
+            addhoofd.getCatNr(listBox1.SelectedItem.ToString());
             addhoofd.hoofdProductNaam = textBox1.Text;
             addhoofd.hoofdProductOmschrijving = richTextBox1.Text;
             addhoofd.hoofdProductNr = textBox2.Text;
@@ -63,8 +56,7 @@ namespace fun12
             {
                 addhoofd.save();
                 cleartext();
-            } 
-
+            }
         }
     }
 }

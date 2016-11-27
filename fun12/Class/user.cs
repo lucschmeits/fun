@@ -1,24 +1,17 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace fun12
 {
-    class user
+    internal class user
     {
-
-        string con = new db().connstring;
+        private string con = new db().connstring;
 
         private string _gebruikersNaam;
         private string _wachtWoord;
         private string _email;
-      
 
-       public string gebruikersnaam
+        public string gebruikersnaam
         {
             get { return this._gebruikersNaam; }
             set { this._gebruikersNaam = value; }
@@ -38,7 +31,7 @@ namespace fun12
 
         public void save()
         {
-           /* System.Windows.Forms.MessageBox.Show(_gebruikersNaam + _wachtWoord + _email); */
+            /* System.Windows.Forms.MessageBox.Show(_gebruikersNaam + _wachtWoord + _email); */
             String str = this.con;
             MySqlConnection con = null;
             try
@@ -49,7 +42,6 @@ namespace fun12
                 MySqlCommand cmd = new MySqlCommand(cmdText, con);
                 cmd.Prepare();
                 cmd.ExecuteNonQuery();
-
             }
             catch (MySqlException err)
             {
