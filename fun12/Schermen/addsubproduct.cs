@@ -45,5 +45,37 @@ namespace fun12.Schermen
                 }
             }
         }
+
+        private bool check()
+        {
+            if(String.IsNullOrEmpty(textBox1.Text) || String.IsNullOrEmpty(richTextBox1.Text))
+            {
+                MessageBox.Show("Niet alle velden zijn ingevuld.");
+                return false;
+            }else
+            {
+                return true;
+            }
+        }
+
+        private void cleartext()
+        {
+            textBox1.Text = "";
+            richTextBox1.Text = "";
+           
+        }
+
+        private void btnToevoegenSub_Click(object sender, EventArgs e)
+        {
+            addsubproducten addsub = new addsubproducten();
+            addsub.getHoofdNr(listBox2.SelectedItem.ToString());
+            addsub.subnaam = textBox1.Text;
+            addsub.subomschrijving = richTextBox1.Text;
+            if (check())
+            {
+                addsub.save();
+                cleartext();
+            }
+        }
     }
 }
