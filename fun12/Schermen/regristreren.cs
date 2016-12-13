@@ -40,8 +40,9 @@ namespace fun12
             newUser.gebruikersnaam = textBox1.Text;
             newUser.wachtwoord = textBox3.Text;
             newUser.email = textBox4.Text;
+            newUser.rechten = comboBox1.SelectedIndex;
             checkInput();
-            if (!String.IsNullOrEmpty(textBox1.Text) && !String.IsNullOrEmpty(textBox2.Text) && !String.IsNullOrEmpty(textBox3.Text) && !String.IsNullOrEmpty(textBox4.Text))
+            if (!String.IsNullOrEmpty(textBox1.Text) && !String.IsNullOrEmpty(textBox2.Text) && !String.IsNullOrEmpty(textBox3.Text) && !String.IsNullOrEmpty(textBox4.Text) && !String.IsNullOrEmpty(comboBox1.Text))
             {
                 if (checkPassword())
                 {

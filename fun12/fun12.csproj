@@ -56,6 +56,14 @@
   <ItemGroup>
     <Compile Include="Class\addhoofdproduct.cs" />
     <Compile Include="Class\addsubproducten.cs" />
+    <Compile Include="Class\categorietoevoegen.cs" />
+    <Compile Include="Class\rechten.cs" />
+    <Compile Include="Schermen\addcategorie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Schermen\addcategorie.Designer.cs">
+      <DependentUpon>addcategorie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Schermen\addproduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +102,9 @@
     </Compile>
     <Compile Include="Class\user.cs" />
     <Compile Include="Class\Users.cs" />
+    <EmbeddedResource Include="Schermen\addcategorie.resx">
+      <DependentUpon>addcategorie.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Schermen\addproduct.resx">
       <DependentUpon>addproduct.cs</DependentUpon>
     </EmbeddedResource>

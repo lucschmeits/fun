@@ -15,3 +15,4 @@ C:\Users\Luc\documents\visual studio 2015\Projects\fun12\fun12\obj\Debug\fun12.h
 C:\Users\Luc\documents\visual studio 2015\Projects\fun12\fun12\obj\Debug\fun12.regristreren.resources
 C:\Users\Luc\Documents\Visual Studio 2015\Projects\fun12\fun12\obj\Debug\fun12.addproduct.resources
 C:\Users\Luc\Documents\Visual Studio 2015\Projects\fun12\fun12\obj\Debug\fun12.Schermen.addsubproduct.resources
+C:\Users\Luc\Documents\Visual Studio 2015\Projects\fun12\fun12\obj\Debug\fun12.Schermen.addcategorie.resources

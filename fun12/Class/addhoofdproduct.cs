@@ -82,7 +82,7 @@ namespace fun12.Class
             }
             catch (MySqlException err)
             {
-                System.Windows.Forms.MessageBox.Show("Error: " + err.ToString());
+                MessageBox.Show("Error: " + err);
             }
         }
     }

@@ -1,5 +1,7 @@
 ﻿using fun12.Class;
+using fun12.Schermen;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 
@@ -7,26 +9,44 @@ namespace fun12
 {
     public partial class homescreen : Form
     {
-        public homescreen()
+        private List<string> CategorieList = new List<string>();
+
+        public homescreen(string username)
         {
             InitializeComponent();
+
             DataTable tb = categorie.getCategory();
             for (int i = 0; i < tb.Rows.Count; i++)
             {
-                catListbox.Items.Add(tb.Rows[i][1]);
+                CategorieList.Add(tb.Rows[i][1].ToString());
+            }
+            catListbox.DataSource = CategorieList;
+            string user = username;
+            rechten recht = new rechten();
+            recht.gebruikersnaam = user;
+            if (recht.CheckRechten())
+            {
+                button2.Show();
+                button4.Show();
+            }
+            else
+            {
+                button2.Hide();
+                button4.Hide();
             }
         }
 
         private void vulCategory()
         {
-            catListbox.Items.Clear();
+            CategorieList.Clear();
             hoofdListbox.Items.Clear();
             subListbox.Items.Clear();
             DataTable tb = categorie.getCategory();
             for (int i = 0; i < tb.Rows.Count; i++)
             {
-                catListbox.Items.Add(tb.Rows[i][1]);
+                CategorieList.Add(tb.Rows[i][1].ToString());
             }
+            catListbox.DataSource = CategorieList;
         }
 
         private void catListbox_SelectedIndexChanged(object sender, EventArgs e)
@@ -81,6 +101,18 @@ namespace fun12
         private void button1_Click(object sender, EventArgs e)
         {
             vulCategory();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            addcategorie cat = new addcategorie();
+            cat.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            regristreren registreer = new regristreren();
+            registreer.Show();
         }
     }
 }

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using fun12.Class;
+using fun12.Schermen;
+using System;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 
 namespace fun12
@@ -10,20 +13,6 @@ namespace fun12
             InitializeComponent();
             this.Cursor = Cursors.Default;
         }
-
-        private homescreen home = new homescreen();
-
-        /* public void setPictureColor()
-         {
-             Color kleur = Color.Green;
-             pictureBox6.BackColor = kleur;
-         }
-
-         public PictureBox picturbox6()
-         {
-             return pictureBox6;
-         }
-         */
 
         private void checkVeld()
         {
@@ -62,6 +51,7 @@ namespace fun12
             //check user
             Users checkUsers = new Users();
 
+            string user = checkUsers.gebruikersnaam = textBox1.Text;
             checkUsers.gebruikersnaam = textBox1.Text;
             checkUsers.wachtwoord = textBox2.Text;
 
@@ -70,6 +60,7 @@ namespace fun12
             // Controleer of de ingevoerde gegevens overeen komen met de gegevens in de database
             if (checkUsers.check())
             {
+                homescreen home = new homescreen(textBox1.Text);
                 home.Show();
                 this.Hide();
             }
@@ -82,16 +73,10 @@ namespace fun12
         {
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            regristreren registreer = new regristreren();
-            registreer.Show();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            addproduct product = new addproduct();
-            product.Show();
-        }
+        /* private void button2_Click(object sender, EventArgs e)
+         {
+             regristreren registreer = new regristreren();
+             registreer.Show();
+         } */
     }
 }

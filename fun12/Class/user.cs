@@ -10,6 +10,7 @@ namespace fun12
         private string _gebruikersNaam;
         private string _wachtWoord;
         private string _email;
+        private int _rechten;
 
         public string gebruikersnaam
         {
@@ -29,6 +30,12 @@ namespace fun12
             set { this._email = value; }
         }
 
+        public int rechten
+        {
+            get { return this._rechten; }
+            set { this._rechten = value; }
+        }
+
         public void save()
         {
             /* System.Windows.Forms.MessageBox.Show(_gebruikersNaam + _wachtWoord + _email); */
@@ -38,7 +45,7 @@ namespace fun12
             {
                 con = new MySqlConnection(str);
                 con.Open(); //open the connection
-                String cmdText = "INSERT INTO `login` (`gebruikersid`, `gebruikersnaam`, `wachtwoord`, `email`) VALUES ('', '" + _gebruikersNaam + "', '" + _wachtWoord + "', '" + _email + "');";
+                String cmdText = "INSERT INTO `login` (`gebruikersid`, `gebruikersnaam`, `wachtwoord`, `email`, `rechten`) VALUES ('', '" + _gebruikersNaam + "', '" + _wachtWoord + "', '" + _email + "', '" + _rechten + "');";
                 MySqlCommand cmd = new MySqlCommand(cmdText, con);
                 cmd.Prepare();
                 cmd.ExecuteNonQuery();
