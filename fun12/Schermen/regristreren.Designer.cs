@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(regristreren));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -44,9 +46,9 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -56,12 +58,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.groupBox1.Controls.Add(this.pictureBox11);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.pictureBox10);
             this.groupBox1.Controls.Add(this.pictureBox9);
@@ -82,6 +85,29 @@
             this.groupBox1.Size = new System.Drawing.Size(763, 433);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "0",
+            "1"});
+            this.comboBox1.Location = new System.Drawing.Point(307, 307);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(268, 28);
+            this.comboBox1.TabIndex = 19;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.BackColor = System.Drawing.Color.White;
+            this.pictureBox10.Location = new System.Drawing.Point(286, 296);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(309, 50);
+            this.pictureBox10.TabIndex = 18;
+            this.pictureBox10.TabStop = false;
             // 
             // pictureBox9
             // 
@@ -223,28 +249,15 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.UseWaitCursor = true;
             // 
-            // pictureBox10
+            // pictureBox11
             // 
-            this.pictureBox10.BackColor = System.Drawing.Color.White;
-            this.pictureBox10.Location = new System.Drawing.Point(286, 296);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(309, 50);
-            this.pictureBox10.TabIndex = 18;
-            this.pictureBox10.TabStop = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "0",
-            "1"});
-            this.comboBox1.Location = new System.Drawing.Point(307, 307);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(268, 28);
-            this.comboBox1.TabIndex = 19;
+            this.pictureBox11.Image = global::fun12.Properties.Resources.user_info_interface_symbol_with_text_lines_at_right_side;
+            this.pictureBox11.Location = new System.Drawing.Point(209, 296);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(56, 50);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox11.TabIndex = 20;
+            this.pictureBox11.TabStop = false;
             // 
             // regristreren
             // 
@@ -260,6 +273,7 @@
             this.Text = "regristreren";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -269,7 +283,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -293,5 +307,6 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.PictureBox pictureBox11;
     }
 }

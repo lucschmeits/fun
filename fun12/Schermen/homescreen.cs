@@ -59,7 +59,7 @@ namespace fun12
                 if (dt.Rows.Count > 0)
                 {
                     var catNummer = dt.Rows[0][0].ToString();
-                    MessageBox.Show(catNummer);
+                    // MessageBox.Show(catNummer);
                     dt = hoofdproducten.getHoofdproducten(catNummer);
                     if (dt.Rows.Count > 0)
                     {
@@ -85,7 +85,7 @@ namespace fun12
                 if (hoofdPr.Rows.Count > 0)
                 {
                     var hoofdNaam = hoofdPr.Rows[0][0].ToString();
-                    MessageBox.Show(hoofdNaam);
+                    // MessageBox.Show(hoofdNaam);
                     hoofdPr = subproducten.getSubproducten(hoofdNaam);
                     if (hoofdPr.Rows.Count > 0)
                     {
@@ -113,6 +113,15 @@ namespace fun12
         {
             regristreren registreer = new regristreren();
             registreer.Show();
+        }
+
+        private void btnUitloggen_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void homescreen_Load(object sender, EventArgs e)
+        {
         }
     }
 }

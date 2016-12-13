@@ -43,6 +43,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnUitloggen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -205,11 +206,27 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Subproduct Toevoegen";
             // 
+            // btnUitloggen
+            // 
+            this.btnUitloggen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.btnUitloggen.FlatAppearance.BorderSize = 0;
+            this.btnUitloggen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUitloggen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUitloggen.ForeColor = System.Drawing.Color.White;
+            this.btnUitloggen.Location = new System.Drawing.Point(601, 12);
+            this.btnUitloggen.Name = "btnUitloggen";
+            this.btnUitloggen.Size = new System.Drawing.Size(174, 42);
+            this.btnUitloggen.TabIndex = 16;
+            this.btnUitloggen.Text = "Log uit";
+            this.btnUitloggen.UseVisualStyleBackColor = false;
+            this.btnUitloggen.Click += new System.EventHandler(this.btnUitloggen_Click);
+            // 
             // addsubproduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 554);
+            this.Controls.Add(this.btnUitloggen);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
@@ -246,5 +263,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnUitloggen;
     }
 }

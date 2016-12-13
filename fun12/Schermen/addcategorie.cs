@@ -62,5 +62,10 @@ namespace fun12.Schermen
                 clear();
             }
         }
+
+        private void btnUitloggen_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

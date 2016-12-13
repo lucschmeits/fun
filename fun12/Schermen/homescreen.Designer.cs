@@ -32,12 +32,13 @@
             this.catListbox = new System.Windows.Forms.ListBox();
             this.hoofdListbox = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.subListbox = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.subListbox = new System.Windows.Forms.ListBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnUitloggen = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -69,6 +70,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.groupBox1.Controls.Add(this.btnUitloggen);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button4);
@@ -81,29 +83,6 @@
             this.groupBox1.Size = new System.Drawing.Size(948, 384);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(18, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 20);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Kies een categorie";
-            // 
-            // subListbox
-            // 
-            this.subListbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.subListbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subListbox.FormattingEnabled = true;
-            this.subListbox.ItemHeight = 20;
-            this.subListbox.Location = new System.Drawing.Point(541, 31);
-            this.subListbox.Name = "subListbox";
-            this.subListbox.Size = new System.Drawing.Size(199, 300);
-            this.subListbox.TabIndex = 11;
-            this.subListbox.SelectedIndexChanged += new System.EventHandler(this.subListbox_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -119,17 +98,6 @@
             this.button1.Text = "Refresh";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox1.Image = global::fun12.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(948, 135);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
             // 
             // button2
             // 
@@ -161,6 +129,55 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(18, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(148, 20);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Kies een categorie";
+            // 
+            // subListbox
+            // 
+            this.subListbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.subListbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subListbox.FormattingEnabled = true;
+            this.subListbox.ItemHeight = 20;
+            this.subListbox.Location = new System.Drawing.Point(541, 31);
+            this.subListbox.Name = "subListbox";
+            this.subListbox.Size = new System.Drawing.Size(199, 300);
+            this.subListbox.TabIndex = 11;
+            this.subListbox.SelectedIndexChanged += new System.EventHandler(this.subListbox_SelectedIndexChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBox1.Image = global::fun12.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(948, 135);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnUitloggen
+            // 
+            this.btnUitloggen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.btnUitloggen.FlatAppearance.BorderSize = 0;
+            this.btnUitloggen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUitloggen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUitloggen.ForeColor = System.Drawing.Color.White;
+            this.btnUitloggen.Location = new System.Drawing.Point(768, 229);
+            this.btnUitloggen.Name = "btnUitloggen";
+            this.btnUitloggen.Size = new System.Drawing.Size(174, 42);
+            this.btnUitloggen.TabIndex = 15;
+            this.btnUitloggen.Text = "Log uit";
+            this.btnUitloggen.UseVisualStyleBackColor = false;
+            this.btnUitloggen.Click += new System.EventHandler(this.btnUitloggen_Click);
+            // 
             // homescreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -174,6 +191,7 @@
             this.Name = "homescreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "homescreen";
+            this.Load += new System.EventHandler(this.homescreen_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -192,5 +210,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnUitloggen;
     }
 }

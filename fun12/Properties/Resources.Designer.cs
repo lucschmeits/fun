@@ -99,5 +99,15 @@ namespace fun12.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_info_interface_symbol_with_text_lines_at_right_side {
+            get {
+                object obj = ResourceManager.GetObject("user-info-interface-symbol-with-text-lines-at-right-side", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
